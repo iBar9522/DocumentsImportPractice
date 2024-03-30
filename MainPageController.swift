@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainPageController.swift
 //  DocumentsImportPractice
 //
 //  Created by Aibar Abylgazin on 29.03.2024.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ViewController: UIViewController {
+final class MainPageController: UIViewController {
 
     // MARK: - Private Properties
     
@@ -30,7 +30,7 @@ final class ViewController: UIViewController {
 
 // MARK: - UIDocumentPickerDelegate
 
-extension ViewController: UIDocumentPickerDelegate {
+extension MainPageController: UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: urls.first!.absoluteString)) else {
@@ -43,7 +43,7 @@ extension ViewController: UIDocumentPickerDelegate {
 
 // MARK: - Actions
 
-private extension ViewController {
+private extension MainPageController {
     
     @objc func buttonIsTapped() {
         let documentPickerVC = UIDocumentPickerViewController(forOpeningContentTypes: [.pdf, .png])
@@ -54,7 +54,7 @@ private extension ViewController {
 
 // Private Extension
 
-private extension ViewController {
+private extension MainPageController {
     
     func setViews() {
         view.addSubview(button)
